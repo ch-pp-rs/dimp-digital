@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <h1>Race to 100k</h1>
+</div>
+<div>
+  <h1>Adkins</h1>
+  <div class="gamerscore-progress progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="{{adkins}}" aria-valuemin="0" aria-valuemax="100000"
+         ng-style="{width: adkins/1000 + '%'}">
+      {{adkins | number:0}}
+    </div>
+  </div>
+  <div class="gamerscore-progress progress">
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{hall}}" aria-valuemin="0" aria-valuemax="100000"
+         ng-style="{width: hall/1000 + '%'}">
+      {{hall | number:0}}
+    </div>
+  </div>
+  <h1>Hall</h1><br /><br />
+</div>
+

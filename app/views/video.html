@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{video.title}}</h1>
+    <i>{{video.publishedAt | date:'medium'}}</i><br><br>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe width="560" height="315" src="{{url}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <br>
+    <span style="white-space:pre-wrap;" ng-bind-html="video.description"></span>
+  </div>
+</div>
+<br><br>

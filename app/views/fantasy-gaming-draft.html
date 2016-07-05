@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <h1>Leaderboard</h1>
+  <ol>
+    <li ng-repeat="player in players | orderBy: '-score'"
+        style="text-align: left;">
+      <h3>{{player.name}}: {{player.score}}</h3>
+    </li>
+</div>
+<div ng-repeat="pick in picks | orderBy: 'pickNo'">
+  <h3><b>#{{pick.pickNo}}:</b>&nbsp;{{pick.name}}</h3>
+
+  <h2>{{pick.game.title}} <span ng-show="pick.game.rating">({{pick.game.rating}})</span></h2>
+  <i>{{pick.game.release_date}}</i><br>
+  {{pick.game.description}} <br><br>
+</div>

@@ -1,0 +1,28 @@
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe ng-src="{{url}}"
+          frameborder="0"
+          scrolling="no"
+          allowfullscreen="true"
+          height="100%"
+          width="100%">
+  </iframe>
+</div>
+
+<div class="media"
+     ng-repeat="video in videos">
+  <div class="media-left">
+    <a ui-sref="app.watchVideo({id: video.id.videoId})">
+      <img class="media-object"
+           ng-if="video.snippet.thumbnails.default.url"
+           ng-src="{{video.snippet.thumbnails.default.url}}">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading dimp-link"
+        ui-sref="app.watchVideo({id: video.id.videoId})">{{video.snippet.title}}</h4>
+    <i>{{video.snippet.publishedAt}}</i>
+
+    <p>{{video.snippet.description}}</p>
+  </div>
+</div>
+
