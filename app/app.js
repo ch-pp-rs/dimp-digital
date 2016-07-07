@@ -8,7 +8,7 @@ angular.module('dimpApp', [
   'ngTouch',
   'ui.router',
   'slugifier',
-  'ngtweet'
+  'dimpApp.socialMedia'
 ]).config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
       .state('app', {
@@ -52,10 +52,15 @@ angular.module('dimpApp', [
         url: '/listen/:pageNo'
       })
       .state('app.social', {
-        controller: 'SocialController',
-        templateUrl: 'views/social.html',
+        controller: 'SocialMediaController',
+        templateUrl: 'modules/socialMedia/views/social-media.html',
         url: '/social'
       });
 
   $urlRouterProvider.otherwise('/app/watch');
+});
+
+angular.module('dimpApp.config', []).constant('SERVER', {
+  'WP': 'http://staging.gravitysupplychain.com/',
+  'API': 'https://dimp-api.herokuapp.com/api/'
 });

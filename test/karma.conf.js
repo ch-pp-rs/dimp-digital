@@ -35,6 +35,8 @@ module.exports = function(config) {
       // endbower
       'app/app.js',
       'app/controllers/**/*.js',
+      'app/modules/socialMedia/*.js',
+      'app/modules/socialMedia/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
