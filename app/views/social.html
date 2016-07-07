@@ -10,17 +10,7 @@
         </a>
     </div>
     <div class="media-body">
-        <i>{{post.created_at | date:'medium'}}</i>
-        <br>
-
-        {{post.text}}<br>
-
-        <p>
-            <a target="_blank" ng-href="https://twitter.com/DimpDigital/status/{{post.id_str}}">
-                <span class="fa fa-link"></span>
-            </a>&nbsp;&nbsp;&nbsp;
-            <span class="fa fa-heart text-danger"></span>&nbsp;{{post.favorite_count}}&nbsp;&nbsp;&nbsp;
-            <span class="fa fa-retweet"></span>&nbsp;{{post.retweet_count}}
-        </p>
+        <twitter-widget twitter-widget-id="post.id_str">
+        </twitter-widget>
     </div>
 </div>

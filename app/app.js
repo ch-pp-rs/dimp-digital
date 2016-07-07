@@ -7,7 +7,8 @@ angular.module('dimpApp', [
   'ngSanitize',
   'ngTouch',
   'ui.router',
-  'slugifier'
+  'slugifier',
+  'ngtweet'
 ]).config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
       .state('app', {
