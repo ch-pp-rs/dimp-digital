@@ -8,7 +8,8 @@ angular.module('dimpApp', [
   'ngTouch',
   'ui.router',
   'slugifier',
-  'dimpApp.socialMedia'
+  'dimpApp.socialMedia',
+  'dimpApp.videos'
 ]).config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
       .state('app', {
@@ -38,12 +39,12 @@ angular.module('dimpApp', [
       })
       .state('app.watch', {
         controller: 'VideosController',
-        templateUrl: 'views/video-list.html',
+        templateUrl: 'modules/videos/views/videos.html',
         url: '/watch'
       })
       .state('app.watchVideo', {
         controller: 'WatchVideoController',
-        templateUrl: 'views/video.html',
+        templateUrl: 'modules/videos/views/video.html',
         url: '/video/:id'
       })
       .state('app.listen', {
