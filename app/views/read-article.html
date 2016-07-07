@@ -1,11 +1,13 @@
-<div class="padding">
-  <h1 class="dd-post-title"
-      ng-bind-html="post.title.rendered"></h1>
+<div class="row">
+    <div class="col-xs-12" style="overflow: hidden">
+        <h1 class="dd-post-title"
+            ng-bind-html="post.title.rendered"></h1>
 
-  <img ng-if="post.better_featured_image.media_details.sizes.medium_large.source_url"
-       ng-src="{{post.better_featured_image.media_details.sizes.medium_large.source_url}}"
-       width="100%"/>
+        <img ng-if="post.better_featured_image.media_details.sizes.medium_large.source_url"
+             ng-src="{{post.better_featured_image.media_details.sizes.medium_large.source_url}}"
+             width="100%"/>
 
     <span class="dd-post"
           ng-bind-html="content"></span>
+    </div>
 </div>
