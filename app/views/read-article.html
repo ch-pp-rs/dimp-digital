@@ -2,6 +2,7 @@
     <div class="col-xs-12 word-press-article">
         <h1 class="dd-post-title"
             ng-bind-html="post.title.rendered"></h1>
+        {{post.date | date: medium}}&nbsp;&nbsp;By {{author.name}}<br><br>
 
         <img ng-if="post.better_featured_image.media_details.sizes.medium_large.source_url"
              ng-src="{{post.better_featured_image.media_details.sizes.medium_large.source_url}}"
@@ -9,5 +10,18 @@
 
     <span class="dd-post"
           ng-bind-html="content"></span>
+
+        <div class="media author-info">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" ng-src="{{author.avatar_urls['96']}}">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{author.name}}</h4>
+                {{author.description}}
+            </div>
+        </div>
     </div>
 </div>
+

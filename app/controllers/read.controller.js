@@ -2,6 +2,8 @@
 
 angular.module('dimpApp')
   .controller('ReadController', function ($scope, $http, $filter, $state, Slug) {
+    document.title = 'Read | Dimp Digital';
+
     $scope.pageNo = parseInt($state.params.pageNo);
     $scope.nextPage = $scope.pageNo + 1;
 
@@ -26,10 +28,25 @@ angular.module('dimpApp')
         $scope.posts.push(post);
       }, $scope.posts);
     });
+
+    $http.get('http://dimpdigital.com/wp-json/wp/v2/users/').then(function (response) {
+      $scope.authors = {};
+
+      angular.forEach(response.data, function(author) {
+        this[author.id] = author.name;
+      }, $scope.authors);
+    });
   })
   .controller('ReadArticleController', function ($scope, $stateParams, $http, $sce) {
     $http.get('http://dimpdigital.com/wp-json/wp/v2/posts/' + $stateParams.articleId).then(function (response) {
       $scope.post = response.data;
       $scope.content = $sce.trustAsHtml(response.data.content.rendered);
+
+      document.title = response.data.title.rendered + ' | Read | Dimp Digital';
+
+      $http.get('http://dimpdigital.com/wp-json/wp/v2/users/' + response.data.author).then(function (response) {
+        $scope.author = response.data;
+        $('meta[name=author]').attr('content', response.data.name);
+      });
     });
   });

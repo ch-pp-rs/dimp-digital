@@ -15,7 +15,7 @@
         ui-sref="app.article({articleId: post.id, title: post.urlTitle})"
         ng-bind-html="post.title.rendered"></h4>
 
-    <i>{{post.date}}</i>
+    <i>By {{authors[post.author]}} on {{post.date}}</i>
     <span ng-bind-html="post.excerpt.rendered"></span>
   </div>
 </div>
