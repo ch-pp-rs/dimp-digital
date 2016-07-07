@@ -1,0 +1,26 @@
+<h1>Social</h1>
+
+<div class="media" ng-repeat="post in posts">
+    <div class="media-left">
+        <a ui-sref="app.article({articleId: post.id, title: post.urlTitle})">
+            <img class="media-object"
+                 height="50"
+                 width="50"
+                 src="/images/TwitterLogo.png">
+        </a>
+    </div>
+    <div class="media-body">
+        <i>{{post.created_at | date:'medium'}}</i>
+        <br>
+
+        {{post.text}}<br>
+
+        <p>
+            <a src="_blank" ng-href="https://twitter.com/DimpDigital/status/{{post.id_str}}">
+                <span class="fa fa-link"></span>
+            </a>&nbsp;&nbsp;&nbsp;
+            <span class="fa fa-heart text-danger"></span>&nbsp;{{post.favorite_count}}&nbsp;&nbsp;&nbsp;
+            <span class="fa fa-retweet"></span>&nbsp;{{post.retweet_count}}
+        </p>
+    </div>
+</div>
