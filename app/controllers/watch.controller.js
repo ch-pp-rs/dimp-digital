@@ -13,7 +13,7 @@ angular.module('dimpApp')
 
       $scope.videos = [];
       angular.forEach(response.data.items, function (video) {
-        if (video.snippet.title.indexOf('Podcast') === -1) {
+        if (video.snippet.title.indexOf('Podcast') !== 0 && video.snippet.title.indexOf('IGC') !== 0) {
           video.snippet.publishedAt = $filter('date')(video.snippet.publishedAt, 'medium');
           $scope.videos.push(video);
         }
