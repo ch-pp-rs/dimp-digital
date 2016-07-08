@@ -1,8 +1,8 @@
 angular.module('dimpApp.videos')
-  .controller('WatchVideoController', function ($scope, $stateParams, $http, $sce) {
+  .controller('WatchVideoController', function ($scope, $stateParams, $sce, videoService) {
     $scope.showVideo = true;
 
-    $http.get('https://dimp-api.herokuapp.com/api/videos/' + $stateParams.id).then(function (response) {
+    videoService.gettingVideoById($stateParams.id).then(function (response) {
       $scope.video = response.data.items[0].snippet;
     });
 
