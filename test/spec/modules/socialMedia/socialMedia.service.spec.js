@@ -17,7 +17,7 @@ describe('Service: socialMediaService', function () {
     });
   });
 
-  it('should get trend chart data without params', function () {
+  it('should get tweets', function () {
     httpMock.expectGET(SERVER.API + 'twitter').respond(200, 'test1');
 
     socialMediaService.gettingTweets().then(function (response) {
