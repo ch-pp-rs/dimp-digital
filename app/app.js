@@ -33,12 +33,7 @@ angular.module('dimpApp', [
       .state('app.read', {
         controller: 'ReadController',
         templateUrl: 'views/read.html',
-        url: '/read/:pageNo'
-      })
-      .state('app.article', {
-        controller: 'ReadArticleController',
-        templateUrl: 'views/read-article.html',
-        url: '/post/:articleId/:title'
+        url: '/read'
       })
       .state('app.watch', {
         controller: 'VideosController',
