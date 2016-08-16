@@ -3,7 +3,6 @@ angular.module('dimpApp.listen')
       $scope.$on('dimp-audio-play', function(event, args){
         // args is the search results
         // from the searchService
-        console.log(args);
 
         if ($scope.audio) {
           $scope.audio.restart();
@@ -22,8 +21,6 @@ angular.module('dimpApp.listen')
       $scope.$on('dimp-playlist-updated', function(event, args){
         // args is the search results
         // from the searchService
-        console.log(args);
-
         $scope.playList = args;
       });
 
