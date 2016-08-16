@@ -1,0 +1,28 @@
+<h1>Listen</h1>
+
+<div class="media" ng-repeat="post in podcasts">
+  <div class="media-left">
+    <img class="media-object"
+         height="100"
+         width="100"
+         ng-if="post.enclosures[1].url"
+         ng-src="{{post.enclosures[1].url}}">
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"
+        ng-bind-html="post.title"></h4>
+
+    <i>By {{post['itunes:author']['#']}}</i>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+    <i>{{post.pubDate | date : 'medium'}}</i>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+    <i>Duration {{post['itunes:duration']['#']}}</i>
+    <span ng-bind-html="post.description"></span>
+
+    <button class="btn btn-success"
+            ng-click="playPod($index)"
+            ng-if="listeningIndex !== $index">Listen Now
+    </button>
+    <!--<button ng-click="addPodToPlaylist($index)"-->
+            <!--ng-if="listeningIndex !== $index">Add to playlist-->
+    <!--</button>-->
+  </div>
+</div>

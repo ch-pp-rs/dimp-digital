@@ -12,6 +12,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -52,15 +53,23 @@
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/angular-slugify/angular-slugify.js"></script>
 <script src="bower_components/ngtweet/dist/ngtweet.js"></script>
+<script src="bower_components/angular-audio/app/angular.audio.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="app.js"></script>
-<script src="controllers/listen.controller.js"></script>
+
 <script src="controllers/fantasyDraft.controller.js"></script>
 <script src="controllers/read.controller.js"></script>
 <script src="controllers/raceTo100k.controller.js"></script>
+
+<script src="modules/listen/listen.module.js"></script>
+<script src="modules/listen/controllers/mediaPlayer.controller.js"></script>
+<script src="modules/listen/controllers/podcasts.controller.js"></script>
 
 <script src="modules/videos/videos.module.js"></script>
 <script src="modules/videos/controllers/video.controller.js"></script>

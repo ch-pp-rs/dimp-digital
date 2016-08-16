@@ -8,12 +8,15 @@ angular.module('dimpApp', [
   'ngTouch',
   'ui.router',
   'slugifier',
+  'ngMaterial',
   'dimpApp.socialMedia',
-  'dimpApp.videos'
+  'dimpApp.videos',
+  'dimpApp.listen'
 ]).config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
       .state('app', {
         abstract: true,
+        controller: 'MediaPlayerController',
         templateUrl: 'views/main.html',
         url: '/app'
       })
@@ -47,10 +50,10 @@ angular.module('dimpApp', [
         templateUrl: 'modules/videos/views/video.html',
         url: '/video/:id'
       })
-      .state('app.listen', {
-        controller: 'ListenController',
-        templateUrl: 'views/listen.html',
-        url: '/listen/:pageNo'
+      .state('app.podcasts', {
+        controller: 'PodcastsController',
+        templateUrl: 'modules/listen/views/podcasts.html',
+        url: '/podcasts'
       })
       .state('app.social', {
         controller: 'SocialMediaController',

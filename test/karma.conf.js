@@ -31,6 +31,10 @@ module.exports = function(config) {
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angular-slugify/angular-slugify.js',
       'bower_components/ngtweet/dist/ngtweet.js',
+      'bower_components/angular-audio/app/angular.audio.js',
+      'bower_components/angular-aria/angular-aria.js',
+      'bower_components/angular-messages/angular-messages.js',
+      'bower_components/angular-material/angular-material.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/app.js',
